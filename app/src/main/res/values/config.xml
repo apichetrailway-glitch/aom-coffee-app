@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- ===== แก้ตรงนี้: ลิงก์เว็บแอป GAS ของ POS อ้อม coffee ===== -->
-    <string name="gas_url">https://script.google.com/macros/s/วางลิงก์เว็บแอปตรงนี้/exec</string>
+    <string name="gas_url">https://script.google.com/macros/s/AKfycbxNOZnYqlzbqcdG5EcZuDr9KbZpay-ZdxO35qyHDtz-txLt1cO1BOiAhmhfyBmyHEWQ-w/exec</string>
 
     <string name="app_name">อ้อม coffee</string>
     <color name="icon_bg">#3B2417</color>
