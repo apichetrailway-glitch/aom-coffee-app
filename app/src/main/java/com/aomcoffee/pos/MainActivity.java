@@ -12,7 +12,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.webkit.CookieManager;
@@ -23,7 +22,6 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -50,20 +48,8 @@ public class MainActivity extends Activity {
         root.addView(web, new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
 
-        // ปุ่มเครื่องพิมพ์มุมซ้ายล่าง
-        TextView btn = new TextView(this);
-        btn.setText("\uD83D\uDDA8");
-        btn.setTextSize(22);
-        btn.setGravity(Gravity.CENTER);
-        btn.setTextColor(Color.WHITE);
-        btn.setBackgroundResource(R.drawable.printer_button);
-        btn.setAlpha(0.85f);
-        btn.setElevation(dp(4));
-        int size = dp(52);
-        FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(size, size, Gravity.BOTTOM | Gravity.START);
-        lp.setMargins(dp(12), dp(12), dp(12), dp(12));
-        root.addView(btn, lp);
-        btn.setOnClickListener(v -> showPrinterDialog());
+        // ไม่มีปุ่มลอยมุมจอแล้ว — เปิดหน้าเลือกเครื่องพิมพ์จากปุ่ม "🖨 เครื่องพิมพ์" ในหน้า จัดการเมนู ของ POS
+        // (ถ้ายังไม่ได้เลือกเครื่องพิมพ์ ตอนกดพิมพ์บิลครั้งแรก หน้าเลือกจะเปิดขึ้นเอง)
 
         setContentView(root);
         hideBars();
@@ -128,7 +114,7 @@ public class MainActivity extends Activity {
         if (!ad.isEnabled()) {
             new AlertDialog.Builder(this)
                     .setTitle("Bluetooth ปิดอยู่")
-                    .setMessage("เปิด Bluetooth ก่อน แล้วแตะปุ่มเครื่องพิมพ์อีกครั้ง")
+                    .setMessage("เปิด Bluetooth ก่อน แล้วลองพิมพ์อีกครั้ง")
                     .setPositiveButton("เปิดตั้งค่า Bluetooth", (d, w) -> openBtSettings())
                     .setNegativeButton("ปิด", null)
                     .show();
