@@ -72,7 +72,7 @@ public class PrinterBridge {
     public String print(final String imagesJson, final int copies) {
         final String id = UUID.randomUUID().toString();
         if (getMac() == null) {
-            results.put(id, res(false, "ยังไม่ได้เลือกเครื่องพิมพ์ แตะปุ่มเครื่องพิมพ์มุมจอ"));
+            results.put(id, res(false, "ยังไม่ได้เลือกเครื่องพิมพ์ เลือกเครื่องในหน้าต่างที่เปิดขึ้น"));
             act.runOnUiThread(act::showPrinterDialog);
             return id;
         }
